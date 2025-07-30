@@ -12,7 +12,7 @@
 	
 	<test>
 		<testCaseName>TestJlmLocal</testCaseName>
-		<disables>
+	<!-- 	<disables>
 			<disable>
 				<comment>https://github.com/adoptium/aqa-systemtest/issues/274</comment>
 				<impl>hotspot</impl>
@@ -23,7 +23,7 @@
 				<impl>ibm</impl>
 				<version>8</version>
 			</disable>
-		</disables>
+		</disables>  -->
 		<variations>
 			<variation>Mode150</variation>
 			<variation>Mode650</variation>
@@ -42,13 +42,13 @@
 	<!-- Temporarily excluding from z/OS due to : jdk11-zos/issues/567 -->
 	<test>
 		<testCaseName>TestJlmRemoteClassAuth</testCaseName>
-		<disables>
+	<!-- 	<disables>
 			<disable>
 				<comment>automation/issues/474</comment>
 				<impl>ibm</impl>
 				<version>8</version>
 			</disable>
-		</disables>
+		</disables>  -->
 		<variations>
 			<variation>Mode150</variation>
 			<variation>Mode650</variation>
@@ -62,11 +62,11 @@
 		<groups>
 			<group>system</group>
 		</groups>
-		<platformRequirements>^os.win,^os.zos</platformRequirements>
+	<!--	<platformRequirements>^os.win,^os.zos</platformRequirements>  -->
 	</test>
 	<test>
 		<testCaseName>TestJlmRemoteClassNoAuth</testCaseName>
-		<disables>
+	<!--	<disables>
 			<disable>
 				<comment>https://github.com/adoptium/infrastructure/issues/2376</comment>
 				<version>8</version>
@@ -78,7 +78,7 @@
 				<impl>ibm</impl>
 				<version>8</version>
 			</disable>
-		</disables>
+		</disables>  -->
 		<variations>
 			<variation>Mode150</variation>
 			<variation>Mode650</variation>
