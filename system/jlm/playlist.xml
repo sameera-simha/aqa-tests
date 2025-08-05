@@ -9,7 +9,163 @@
 	<!-- 
 	Special target to get machine information. This target is in each subfolder playlist.xml.
 	To avoid test target duplication, this belongs to sanity, extended and special. Regular test should only belong to one level -->
-	
+		<!-- 	#############################AIX BLOCK##############################  -->
+		<test>
+		<testCaseName>TestJlmLocalaix</testCaseName>
+		
+		    <variations>
+			<variation>Mode101</variation>
+			<variation>Mode112</variation>
+			<variation>Mode121</variation>
+			<variation>Mode614</variation>			
+		</variations>
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmLocal; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+		<platformRequirements>os.aix</platformRequirements>
+	</test>
+	<!-- ######################################################################-->
+	<test>
+		<testCaseName>TestJlmRemoteClassAuthaix</testCaseName>
+		
+		 <variations>
+		<variation>Mode103</variation>
+			<variation>Mode119</variation>
+			<variation>Mode553</variation>
+		</variations>
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmRemoteClassAuth; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+		<platformRequirements>os.aix</platformRequirements>
+	</test>
+	<!-- ######################################################################-->
+	<test>
+		<testCaseName>TestJlmRemoteClassNoAuthaix</testCaseName>
+		 <variations>
+			<variation>Mode103</variation>
+			<variation>Mode119</variation>
+			<variation>Mode553</variation>
+		</variations>
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmRemoteClassNoAuth; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+		<platformRequirements>os.aix</platformRequirements>
+	</test>
+	<!-- ######################################################################-->		
+	<test>
+		<testCaseName>TestJlmRemoteMemoryAuthaix</testCaseName>
+			<variations>
+			<variation>Mode103</variation>
+			<variation>Mode112</variation>
+			<variation>Mode121</variation>
+			<variation>Mode610</variation>
+			<variation>Mode503</variation>
+		</variations>		
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmRemoteMemoryAuth; \
+	$(TEST_STATUS)</command>
+			<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+		<platformRequirements>os.aix</platformRequirements>
+	</test>
+	<!-- ######################################################################-->
+		<test>
+		<testCaseName>TestJlmRemoteMemoryNoAuthaix</testCaseName>
+		
+	<variations>
+			<variation>Mode103</variation>
+			<variation>Mode112</variation>
+			<variation>Mode121</variation>
+			<variation>Mode610</variation>
+			<variation>Mode503</variation>
+		</variations>
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmRemoteMemoryNoAuth; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+	</test>
+	<!-- Excluded from Windows due to https://github.com/adoptium/aqa-systemtest/issues/198 -->
+	<!-- Temporarily excluding from z/OS due to : jdk11-zos/issues/567 -->
+	<test>
+		<testCaseName>TestJlmRemoteNotifierProxyAuthaix</testCaseName>
+		
+		<variations>
+			<variation>Mode112</variation>
+			<variation>Mode121</variation>
+			<variation>Mode614</variation>
+			<variation>Mode501</variation>
+		</variations>
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmRemoteNotifierProxyAuth; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+		<platformRequirements>os.aix</platformRequirements>
+	</test>
+	<!-- ######################################################################  -->
+	<!-- Excluded from Windows due to https://github.com/adoptium/aqa-systemtest/issues/198 -->
+	<!-- Temporarily excluding from z/OS due to : jdk11-zos/issues/567 -->
+	<test>
+		<testCaseName>TestJlmRemoteThreadAuthaix</testCaseName>
+		<variations>
+			<variation>Mode105</variation>
+			<variation>Mode121</variation>
+			<variation>Mode555</variation>
+		</variations>
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmRemoteThreadAuth; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+		<platformRequirements>os.aix</platformRequirements>
+	</test>
+	<!-- ######################################################################  -->
+	<test>
+		<testCaseName>TestJlmRemoteThreadNoAuthaix</testCaseName>
+		
+	<variations>
+			<variation>Mode105</variation>
+			<variation>Mode121</variation>
+			<variation>Mode555</variation>
+		</variations>
+		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=TestJlmRemoteThreadNoAuth; \
+	$(TEST_STATUS)</command>
+		<levels>
+			<level>sanity</level>
+		</levels>
+		<groups>
+			<group>system</group>
+		</groups>
+	</test>
+	<!-- ##########End of AIXblock############################################################  -->
 	<test>
 		<testCaseName>TestJlmLocal</testCaseName>
 		<disables>
